@@ -1,3 +1,5 @@
+import '~/global.css';
+
 import type { FC } from 'react';
 
 export const App: FC = () => {
