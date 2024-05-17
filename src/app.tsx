@@ -1,7 +1,12 @@
 import '~/global.css';
 
-import type { FC } from 'react';
+import { type FC, lazy, Suspense } from 'react';
+import { Route, Switch } from 'wouter';
 
-export const App: FC = () => {
-	return <>Hello, worlds!</>;
-};
+export const App: FC = () => (
+	<Suspense>
+		<Switch>
+			<Route path='/' component={lazy(() => import('~/pages/home'))} />
+		</Switch>
+	</Suspense>
+);
